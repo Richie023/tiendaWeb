@@ -1,0 +1,85 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 2 abr 2023, 21:35:51
+    Author     : ricar_t6uqtj3
+*/
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Oxygen', sans-serif;
+}
+.container{
+    height: 100vh;
+    width: 100%;
+    background-image: url(../images/background.png");
+    
+    background-position: center;
+    background-size: cover;
+    background-repeat: none;
+    padding-left: 5%; 
+    padding-right: 5%; 
+    box-sizing: border-box;
+    position: relative;
+    
+}
+
+.navbar{
+    width: 100%;
+    height: 15vh;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    position: relative;
+    
+    
+}
+.logo{
+    width: 130px;
+    cursor: pointer;
+}
+
+
+nav{
+    padding-left: 60px;
+    position: absolute;
+    left: 500px;
+}
+
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0px 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 25px;
+}
+
+.container h1{
+    font-size: 60px;
+    font-weight: 100;
+    margin-top: 24px;
+    margin-bottom: 15px;
+    color: #232d60;
+}
+
+.content p{
+    font-size: 20px;
+    color: #6a7199;
+}
+
+.fondo{
+    height: 50%;
+    position: absolute;
+    bottom: 50px;
+    right: 160px;
+}
+

@@ -1,0 +1,64 @@
+/*
+*
+
+/* 
+    Created on : 2 abr 2023, 21:36:00
+    Author     : ricar_t6uqtj3
+Position, desplazar o mover nuestros contenedores
+
+box-sizing: context-box se usa por defautl y suma todos los elementos y reenderiza la etiquetas y border-box suma todos los datospara ajustarse al padding y al weigth
+
+*/
+
+.block{
+    background-color: purple; 
+    border: 10px solid blue;
+    padding: 20px;
+    width: 200px;
+    height: 200px;
+    box-sizing: border-box;
+}
+
+
+.static{
+    position: static;
+    border: 3px solid green;
+    top:400px;
+    left: 500px;
+}
+.relative{
+   position: relative;
+    border: 3px solid green;
+    top:400px;
+    left: 500px;  
+    height: 300px;
+}
+
+.fixed{
+    position: fixed;
+    border: 3px solid green;
+    top:150px;
+    left: 100px;
+    height: 100px;
+}
+
+.absolute{
+    position: absolute;
+    border: 3px solid green;
+    top:150px;
+    left: 100px;
+    height: 100px;  
+}
+.cuadrado{
+    width: 200px;
+    height: 200px;
+    background: #aaa;
+    margin-bottom: 20px;
+    display: inline-block; 
+}
+
+a{
+    display: block;
+}
+
+
