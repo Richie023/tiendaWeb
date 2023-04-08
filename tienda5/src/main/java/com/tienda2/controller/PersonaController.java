@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.tienda2.controller;
 
 
@@ -22,7 +19,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class PersonaController {
     
-    
     @Autowired
     private IPersonaService personaService;
     
@@ -32,7 +28,7 @@ public class PersonaController {
     @GetMapping("/persona")
     public String index(Model model){
         List<Persona> listaPersona = personaService.getAllPersona();
-        model.addAttribute("titulo", "Tabla Personas");
+        model.addAttribute("titulo", "Tabla Persona");
         model.addAttribute("personas", listaPersona);
         return "personas";
     }
@@ -66,7 +62,7 @@ public class PersonaController {
     model.addAttribute("personas", persona);
     model.addAttribute("paises", listaPaises);
     return  "crear";
-    }}
+    }
     
     
     
@@ -77,4 +73,4 @@ public class PersonaController {
     
     
     
-  
+}
