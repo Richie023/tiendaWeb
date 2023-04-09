@@ -5,6 +5,9 @@
 package com.tienda2.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,23 +16,28 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-
 /**
  *
  * @author ricar_t6uqtj3
  */
 @Entity
-@Table (name="personas")
-public class Persona implements Serializable{
+@Table(name = "personas")
+public class Persona implements Serializable {
+
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombre;
     private String apellido1;
     private String apellido2;
     private String telefono;
     private String email;
-    
+    private String password;
+
+    private String active;
+    private String roles = "";
+    private String permissions = "";
+
     @ManyToOne
     @JoinColumn(name = "paises_id")
     private Pais pais;
@@ -131,8 +139,75 @@ public class Persona implements Serializable{
     public void setPais(Pais pais) {
         this.pais = pais;
     }
-    
-    
 
-    
-}
+    /**
+     * @return the password
+     */
+    public String getPassword() {
+        return password;
+    }
+
+    /**
+     * @param password the password to set
+     */
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    /**
+     * @return the active
+     */
+    public String getActive() {
+        return active;
+    }
+
+    /**
+     * @param active the active to set
+     */
+    public void setActive(String active) {
+        this.active = active;
+    }
+
+    /**
+     * @return the roles
+     */
+    public String getRoles() {
+        return roles;
+    }
+
+    /**
+     * @param roles the roles to set
+     */
+    public void setRoles(String roles) {
+        this.roles = roles;
+    }
+
+    /**
+     * @return the permissions
+     */
+    public String getPermissions() {
+        return permissions;
+    }
+
+    /**
+     * @param permissions the permissions to set
+     */
+    public void setPermissions(String permissions) {
+        this.permissions = permissions;
+    }
+
+    public List<String> getRoleList() {
+        if (this.roles.length() > 0) {
+            return Arrays.asList(this.roles.split(","));
+        }
+        return new ArrayList<>();
+
+    }
+
+    public List<String> getPermissionList() {
+        if (this.permissions.length() > 0) {
+            return Arrays.asList(this.permissions.split(","));
+        }
+        return new ArrayList<>();
+
+    }}
