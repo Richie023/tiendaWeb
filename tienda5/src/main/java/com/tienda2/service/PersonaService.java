@@ -36,16 +36,14 @@ public class PersonaService implements IPersonaService {
     public void delete(long id) {
         personaRepository.deleteById(id);  }
 
- 
-
     @Override
     public Persona findByNombre(String username) {
-       return personaRepository.findByNombre(username);  }
+       return personaRepository.findByNombre(username); }
 
-    @Override
-    public Persona findBYNombre(String username) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+
+    
+
+   
 
  }
     

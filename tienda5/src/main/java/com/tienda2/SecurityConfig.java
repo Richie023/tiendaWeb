@@ -23,6 +23,7 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+   
     @Autowired
     private UserService userDetailsService;
     
@@ -62,11 +63,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
      http.authorizeRequests()
      .antMatchers("/persona","/login")
              .hasRole("ADMIN")
-             .antMatchers("/personasN","/personas", "/login")
+             .antMatchers("/personasN","/persona", "/login")
              .hasAnyRole("USER","VENDEDOR", "ADMIN")
-             .anyRequest().authenticated()
              .and()
-             .formLogin();
+             .formLogin()
+             .loginPage("/login").permitAll().defaultSuccessUrl("/persona",true).and().logout()
+             .logoutSuccessUrl("/");
      
  }
 }

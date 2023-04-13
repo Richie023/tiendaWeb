@@ -14,6 +14,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 
 
+
 /**
  *
  * @author ricar_t6uqtj3
@@ -39,8 +40,7 @@ public class Userprincipal implements UserDetails {
         
     //Extract list of roles (ROLE_name)
       
-    this.persona.getRoleList () 
-        .forEach(r ->{
+    this.persona.getRoleList ().forEach(r ->{
         GrantedAuthority authority = new SimpleGrantedAuthority("ROLE_ " + r);
         authorities.add(authority);
     }
@@ -48,37 +48,29 @@ public class Userprincipal implements UserDetails {
 
 return authorities;
     }
-    
+
     @Override
     public String getPassword() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    return this.persona.getPassword();
     }
 
     @Override
     public String getUsername() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+       return this.persona.getNombre();
     }
 
     @Override
     public boolean isAccountNonExpired() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+       return true; }
 
     @Override
     public boolean isAccountNonLocked() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+       return true;   }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+      return true;  }
 
-    @Override
+    /*@Override
     public boolean isEnabled() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
- 
-       
-    }
-    
-}
+       return this.persona.getActive() = 1;}}*/}
